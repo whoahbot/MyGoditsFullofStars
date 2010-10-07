@@ -3,6 +3,99 @@
   <head> 
   </head> 
   <body>
+
+    <div id="readme" class="announce textile"><span class="name">README.textile</span><div class="wikistyle"><h1>dm-redis-adapter</h1> 
+<p>This is a <a href="http://datamapper.org">DataMapper</a> adapter for the <a href="http://github.com/antirez/redis/">Redis</a> key-value database.</p> 
+<p>Redis is a very fast key-value store with some interesting data structures added.  You can have a key that is a <span>SET</span>, <span>LIST</span>, <span>STRING</span> or <span>HASH</span> that is binary safe.  Data structures like <span>SET</span> and <span>LIST</span> allow for even more interesting things.  Redis is a fabulous and fast engine for data structures, and you can read more about it here: <a href="http://code.google.com/p/redis/">redis</a>.  Redis is also a persistent data store, and can be used in large-scale environments with master-slave replication and consistent hashing on the client side.</p> 
+<p><a href="http://datamapper.org">DataMapper</a> is a brilliant <span>ORM</span> that is based on the <a href="http://www.martinfowler.com/eaaCatalog/identityMap.html">IdentityMap</a> pattern.  Usage of DataMapper resembles that of ActiveRecord, the popular <span>ORM</span> bundled with Ruby on Rails, but with some very important differences.  A quote from the DM wiki: “One row in the database should equal one object reference. Pretty simple idea. Pretty profound impact.”  Having an identity map allows for very efficient queries to the database, as well as interesting forms of lazy loading of attributes or associations.</p> 
+<p>Marrying DataMapper to Redis allows for schema-less models, you can add fields at any time without having to create a migration.  DataMapper also allows us to store non-native Redis types in the db, like Date fields.</p> 
+<h1>Upgrading</h1> 
+<p>&gt; v0.1 is not compatible with data created with previous versions!  The new storage schema is designed to be more VM friendly.  I won’t be releasing a gem version of v0.1 until a stable version of redis that includes hash support has been released.</p> 
+<h1>Changelog</h1> 
+<ul> 
+<li>v0.2.1  Fixes to sorting</li> 
+	<li>v0.1.1  Update to redis-rb v2.0.0</li> 
+	<li>v0.1    Update to store records as redis hash values</li> 
+	<li>v0.0.11 Updates to support newer versions of the redis client, support for <span>JSON</span> datatypes</li> 
+</ul><h1>Install</h1> 
+<p>Prerequisites:</p> 
+<ul> 
+<li>Redis:
+	<ul> 
+<li><a href="http://code.google.com/p/redis/">Redis, v2.0.x RC series</a></li> 
+	</ul> 
+</li> 
+	<li>Gems:
+	<ul> 
+<li> 
+<a href="http://github.com/datamapper/dm-core/">dm-core</a> v1.0.0</li> 
+	</ul> 
+</li> 
+</ul><p>Install the dm-redis adapter:<br></p><pre><br><code> 
+    &gt; gem install dm-redis-adapter
+  </code><br></pre> 
+<h1>Usage</h1> 
+<p>Setup your adapter, define your models and properties:</p> 
+<pre> 
+  <code> 
+    require 'rubygems'
+    require 'dm-core'
+    require 'dm_redis'
+ 
+    DataMapper.setup(:default, {:adapter  =&gt; "redis"})
+ 
+    class Cafe
+      include DataMapper::Resource
+ 
+      property :id,     Serial
+      property :name,   Text
+    end
+ 
+    Cafe.create(:name =&gt; "Whoahbot's Caffienitorium")
+  </code> 
+</pre> 
+<p>Now you can use redis in a <span>ORM</span> style, and take advantage of all of the amazing things that DataMapper offers.</p> 
+<p>If you want to do finds on specific String fields, add an index:</p> 
+<pre> 
+  <code> 
+    class Coffee
+      include DataMapper::Resource
+ 
+      property :id,            Serial
+      property :description,   String, :index =&gt; true
+    end
+ 
+    Coffee.create(:description =&gt; "Notes of crude oil and sulphur")
+    Coffee.first(:description =&gt; "Notes of crude oil and sulphur") # will now work
+  </code> 
+</pre> 
+<p>Validations on unique fields are now supported through indices and dm-validations:</p> 
+<pre> 
+  <code> 
+    class Crumblecake
+      include DataMapper::Resource
+      validates_is_unique :flavor
+ 
+      property :id,      Serial
+      property :flavor,  String, :index =&gt; true
+    end
+ 
+    Crumblecake.create(:flavor =&gt; "snozzbler")
+    Crumblecake.new(:flavor =&gt; "snozzbler").valid? # false (of course!  Who ever heard of a snozzbler crumblecake?)
+  </code> 
+</pre> 
+<h1>Badass contributors</h1> 
+<ul> 
+<li> 
+<a href="http://github.com/aeden">Anthony Eden (aeden)</a> Gem cleanup, update to jeweler</li> 
+	<li> 
+<a href="http://github.com/sr">Simon Roset (sr)</a> Fixes for edge dm-core</li> 
+	<li> 
+<a href="http://github.com/cehoffman">Chris Hoffman (cehoffman)</a> Fixes for Ruby 1.9, bundler for development deps, fixes for sorting</li> 
+	<li> 
+<a href="http://github.com/bpo">brian p o’rourke (bpo)</a> Updates for newer versions of redis client and DM <span>JSON</span> type support, move to hash storage</li> 
+</ul></div></div> 
+    
   </body>
   <script type='text/javascript' src='js/anim.js'></script>
 </html> 
