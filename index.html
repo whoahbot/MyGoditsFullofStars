@@ -1,67 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>MyGoditsFullofStars</title>
-	
-	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #ffe0e7;
-		  font-family: "Helvetica,Arial,FreeSans";
-  		color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; color: #201f18; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #201f18; }
-    h3 { text-align: center; color: #201f18; }
-    a { color: #201f18; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-	</style>
-	
-</head>
-
-<body>
-  <a href="http://github.com/whoahbot/MyGoditsFullofStars"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-    <h1><a href="http://github.com/whoahbot/MyGoditsFullofStars">MyGoditsFullofStars</a>
-      <span class="small">by <a href="http://github.com/whoahbot">whoahbot</a></span></h1>
-
-    <div class="description">
-      <p>
-        Got a github project that is fabulous?   Got a README that is not so fabulous?  Here's what you do.
-        Drag this bookmarklet to your bookmark's bar:
-        <a href="javascript:var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='https://github.com/whoahbot/MyGoditsFullofStars/raw/master/js/myGodItsFullOfStars.min.js';void(0);" title="MyGodItsFullOfStars">My God, It's Full of Stars!</a>
-      </p>
+  <head>
+    <link href="stylesheets/stylez.css" media="screen" rel="stylesheet" type="text/css" />
+    <meta content='width=device-width, minimum-scale=1.0, maximum-scale=1.' name='viewport'>
+    <title>My God, it's Full of Stars!</title>
+  </head>
+  <body>
+    <div id='wrap'>
+      <div id='main'>
+        <div class='header'>
+          <div id='page_title'>
+            <h1>My God, it's Full of Stars!</h1>
+          </div>
+          <div id='icons'>
+            <a href='http://github.com/whoahbot/'><img src='images/whoahbot_icon.png'></a>
+          </div>
+          <div class='clear'></div>
+        </div>
+        <div class='item'>
+          <div class='contents'>
+            <span class='title'>What?</span> 
+            <p class='para'>
+              <ul>
+                <li>Got an awesome GitHub project?</li>
+                <li> Got a pretty lame README?<li>
+                <li>Got Safari? <span class='stars'>**</span></li>
+                <li>Quickly!  Take this: <a href="javascript:var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='https://github.com/whoahbot/MyGoditsFullofStars/raw/master/js/myGodItsFullOfStars.min.js';void(0);" title="MyGodItsFullOfStars">My God, It's Full of Stars!</a></li>
+                <li>Drag it to your bookmarks bar.</li>
+                <li>Go to a GitHub page with a README.</li>
+                <li>Click</li>
+              </ul>
+            </p>
+          </div>
+          <div class='contents'>
+            <span class='title'>Wait, why just Safari? **</span> 
+              <p class='para'>
+                <ul>
+                  <li>Hey why just Safari?</li>
+                  <li>Arrrrgh!  I really didn't want it to be just Safari.  I did this in canvas, but I could never find a trapezoidal matrix transformation that simulated the 3d effect I wanted.</li>
+                  <li><span class='help'>Help!</span> If you are a mad canvas genius, please get in touch!</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <h2>Authors</h2>
-    <p>Whoahbot (whoahbot@gmail.com)</p>
-
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/whoahbot/MyGoditsFullofStars</pre>
-    </p>
-  </div>
-
-  <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-7782015-6");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-</body>
+  </body>
 </html>

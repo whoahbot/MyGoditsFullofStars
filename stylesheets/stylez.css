@@ -1,0 +1,118 @@
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  color: white;
+  background: -webkit-gradient(radial, center center, 100, center center, 5000, from(#364D58), to(#FFF));
+  margin: 0px;
+  padding: 0px;
+}
+
+#main {
+  background: -webkit-gradient(linear, left top, left bottom, from(#464848), to(#2E3030));
+  -webkit-background-origin: padding; -webkit-background-clip: content;
+  -webkit-box-shadow: black 0px 2px 4px;
+  -webkit-border-radius: 5px;
+}
+
+#content {
+  padding-bottom: 1px;
+}
+
+#wrap {
+  margin: 5px;
+}
+
+#page_title {
+  float: left;
+  margin-left: 25px;
+}
+
+#icons {
+  float: right;
+  margin-right: 25px;
+  margin-top: 25px;
+}
+
+#whoahbot {
+  float: right;
+}
+
+#bar {
+  background-color: rgba(140,172,176,0.5);
+  width: 100px;
+  -webkit-border-radius: 100px 40px;
+}
+
+#bar div.top {
+  background-color:rgba(140,172,176,0.7); position:relative;
+  width:100px; height:40px;
+  -webkit-border-radius: 100px 40px;
+}
+
+#bar div.bottom {
+  background-color:rgba(140,172,176,0.1); position:relative;
+  width:100px; height:40px;
+  -webkit-border-radius: 100px 40px; 
+  -webkit-border-radius: 100px/40px;
+  -webkit-box-shadow: 0 5px 30px hsla(0,0%,0%,.2);
+}
+
+.para {
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  text-shadow: #222 0px 1 px 3px;
+}
+
+ul {
+  -webkit-padding-start: 0px;
+}
+
+li {
+  padding: 5px;
+  list-style-type: none;
+}
+
+.header {
+  padding-top: 10px;
+}
+
+a {
+  color: #FEFEFE
+}
+
+.title {
+  font-family: Arial, sans-serif;
+  font-size: 157%;
+  text-shadow: #222 0px -1px 0px;
+  color: #5F839E;
+}
+
+.item {
+  border-top: 1px solid #555;
+  background: -webkit-gradient(linear, left top, left bottom, from(#464848), to(#2E3030));
+  border-bottom: 1px solid #222;
+}
+
+.stars {
+  color: #5F839E;
+}
+
+.intro {
+  color: #5F839E;
+  text-shadow: #222 0px -1px 0px;
+}
+
+.contents {
+  padding: 25px;
+  color: #999;
+  text-shadow: black 0px -1px 0px;
+}
+
+.clear {
+  clear: both;
+}
+
