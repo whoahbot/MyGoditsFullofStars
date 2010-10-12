@@ -1,12 +1,14 @@
 html {
   font-family: Helvetica, Arial, sans-serif;
   color: white;
+  background: -moz-radial-gradient(center, #FFF 5%, #364D58 85%);
   background: -webkit-gradient(radial, center center, 100, center center, 5000, from(#364D58), to(#FFF));
   margin: 0px;
   padding: 0px;
 }
 
 #main {
+  background: -moz-linear-gradient(top, #464848, #2E3030);
   background: -webkit-gradient(linear, left top, left bottom, from(#464848), to(#2E3030));
   -webkit-background-origin: padding; -webkit-background-clip: content;
   -webkit-box-shadow: black 0px 2px 4px;
@@ -93,6 +95,7 @@ a {
 
 .item {
   border-top: 1px solid #555;
+  background: -moz-linear-gradient(top, #464848, #2E3030);
   background: -webkit-gradient(linear, left top, left bottom, from(#464848), to(#2E3030));
   border-bottom: 1px solid #222;
 }
